@@ -20,6 +20,7 @@ BuildRequires:	cmake >= 3.3
 BuildRequires:	make
 BuildRequires:	gcc
 BuildRequires:	glibc-devel
+BuildRequires:	gdb
 
 # PMDK is currently available only on x86_64
 ExclusiveArch: x86_64
