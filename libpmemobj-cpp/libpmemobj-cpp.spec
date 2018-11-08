@@ -20,6 +20,11 @@ BuildRequires:	perl-Encode
 
 # There's nothing x86-64 specific in this package, but we have
 # to duplicate what spec for pmdk/libpmemobj has at the moment.
+# Relevant bug reports:
+# https://bugzilla.redhat.com/show_bug.cgi?id=1340634
+# https://bugzilla.redhat.com/show_bug.cgi?id=1340635
+# https://bugzilla.redhat.com/show_bug.cgi?id=1340636
+# https://bugzilla.redhat.com/show_bug.cgi?id=1340637
 ExclusiveArch: x86_64
 
 %description
