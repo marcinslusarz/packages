@@ -1,12 +1,12 @@
-%define upstreamversion 1.5
+%global upstreamversion 1.5
 
 Name:		pmdk-convert
 Version:	1.5
 Release:	1%{?dist}
 Summary:	Conversion tool for PMDK pools
+# Note: utils/cstyle is CDDL licensed. It's only used during development and it's NOT part of the binary RPM.
 License:	BSD
 URL:		https://github.com/pmem/pmdk-convert
-Group:		System Environment/Base
 
 Source0:	https://github.com/pmem/%{name}/archive/%{upstreamversion}.tar.gz#/%{name}-%{upstreamversion}.tar.gz
 Source1:	https://github.com/pmem/pmdk/archive/1.0.tar.gz#/nvml-1.0.tar.gz
@@ -17,8 +17,6 @@ Source5:	https://github.com/pmem/pmdk/archive/1.4.2.tar.gz#/nvml-1.4.2.tar.gz
 Source6:	https://github.com/pmem/pmdk/archive/1.5.tar.gz#/nvml-1.5.tar.gz
 
 BuildRequires:	cmake >= 3.3
-BuildRequires:	make
-BuildRequires:	gcc
 BuildRequires:	glibc-devel
 BuildRequires:	gdb
 
@@ -33,6 +31,7 @@ conversion and this tool supports only those kind of pools.
 %files
 %{_bindir}/pmdk-convert
 %{_mandir}/man1/pmdk-convert.1.gz
+%dir %{_libdir}/pmdk-convert
 %{_libdir}/pmdk-convert/libpmem-convert.so
 %{_libdir}/pmdk-convert/pmemobj_convert_v1.so
 %{_libdir}/pmdk-convert/pmemobj_convert_v2.so
@@ -73,5 +72,5 @@ ctest -V
 %endif
 
 %changelog
-* Tue Nov 6 2018 Marcin Ślusarz <marcin.slusarz@intel.com> - 1.5-1
+* Thu Nov 8 2018 Marcin Ślusarz <marcin.slusarz@intel.com> - 1.5-1
 - Initial RPM release
