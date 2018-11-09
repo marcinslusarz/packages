@@ -21,6 +21,11 @@ BuildRequires:	glibc-devel
 BuildRequires:	gdb
 
 # PMDK is currently available only on x86_64
+# Relevant bug reports:
+# https://bugzilla.redhat.com/show_bug.cgi?id=1340634
+# https://bugzilla.redhat.com/show_bug.cgi?id=1340635
+# https://bugzilla.redhat.com/show_bug.cgi?id=1340636
+# https://bugzilla.redhat.com/show_bug.cgi?id=1340637
 ExclusiveArch: x86_64
 
 %description
